@@ -1,0 +1,4 @@
+/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/build_debug/CMakeFiles/rebuild_cache.dir
+/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/build_debug/CMakeFiles/edit_cache.dir
+/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/build_debug/CMakeFiles/server.dir
+/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/build_debug/CMakeFiles/client.dir

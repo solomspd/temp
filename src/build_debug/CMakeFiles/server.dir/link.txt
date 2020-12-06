@@ -1,0 +1,1 @@
+/sbin/c++ CMakeFiles/server.dir/daemon.cpp.o CMakeFiles/server.dir/remote_proc.cpp.o -o server  -pthread 

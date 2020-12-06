@@ -1,0 +1,42 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/build_debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/sbin/make cmTC_6be97/fast && /sbin/make  -f CMakeFiles/cmTC_6be97.dir/build.make CMakeFiles/cmTC_6be97.dir/build
+make[1]: Entering directory '/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/build_debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6be97.dir/src.c.o
+/sbin/cc   -DCMAKE_HAVE_LIBC_PTHREAD -o CMakeFiles/cmTC_6be97.dir/src.c.o -c "/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/build_debug/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_6be97
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6be97.dir/link.txt --verbose=1
+/sbin/cc  -DCMAKE_HAVE_LIBC_PTHREAD CMakeFiles/cmTC_6be97.dir/src.c.o -o cmTC_6be97 
+/sbin/ld: CMakeFiles/cmTC_6be97.dir/src.c.o: in function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+/sbin/ld: src.c:(.text+0x4a): undefined reference to `pthread_detach'
+/sbin/ld: src.c:(.text+0x56): undefined reference to `pthread_cancel'
+/sbin/ld: src.c:(.text+0x67): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_6be97.dir/build.make:106: cmTC_6be97] Error 1
+make[1]: Leaving directory '/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/build_debug/CMakeFiles/CMakeTmp'
+make: *** [Makefile:140: cmTC_6be97/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+

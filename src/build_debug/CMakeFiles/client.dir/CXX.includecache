@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/lib.cpp
+bits/types/siginfo_t.h
+-
+boost/asio.hpp
+-
+filesystem
+-
+iostream
+-
+sched.h
+-
+sys/ptrace.h
+-
+sys/types.h
+-
+sys/wait.h
+-
+unistd.h
+-
+remote_proc.hpp
+/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/remote_proc.hpp
+
+/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/remote_proc.hpp
+boost/asio.hpp
+-
+string
+-
+
