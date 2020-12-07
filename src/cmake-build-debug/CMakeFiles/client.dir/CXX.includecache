@@ -6,3 +6,25 @@
 
 #IncludeRegexTransform: 
 
+/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/lib.cpp
+iostream
+-
+string
+-
+SFML/Network.hpp
+-
+
+/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/main.cpp
+iostream
+-
+fstream
+-
+unistd.h
+-
+sys/types.h
+-
+pwd.h
+-
+lib.cpp
+/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/lib.cpp
+

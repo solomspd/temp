@@ -25,4 +25,8 @@ unistd.h
 -
 fcntl.h
 -
+fstream
+-
+pwd.h
+-
 
