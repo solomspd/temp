@@ -6,3 +6,23 @@
 
 #IncludeRegexTransform: 
 
+/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/daemon.cpp
+SFML/Network.hpp
+-
+filesystem
+-
+iostream
+-
+string
+-
+sys/stat.h
+-
+thread
+-
+vector
+-
+unistd.h
+-
+fcntl.h
+-
+

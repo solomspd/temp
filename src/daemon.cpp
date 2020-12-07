@@ -1,5 +1,5 @@
 #include <SFML/Network.hpp>
-#include <criu/criu.h>
+//#include <criu/criu.h>
 #include <filesystem>
 #include <iostream>
 #include <string>
@@ -130,7 +130,7 @@ void remote_listener() {
 		connection.disconnect();
 		restore(proc);
 
-		stat = connection.connect("localhost", local_port);
+		stat = connection.connect("localhost", 3100);
 		if (stat != sf::Socket::Done) {
 			std::cout << "Cannot connect to client" << std::endl;
 		}
@@ -149,40 +149,47 @@ void remote_listener() {
 int checkpoint(int proc, const std::string &address) {
 	std::cout << "started remote fork procedure" << std::endl;
 
-	// create checkpoint through CRIU
-	criu_check();
-	criu_init_opts();
-
-	criu_set_service_address(NULL);
-
-	criu_set_pid(proc);
-
 	std::string img_path = "/tmp/dumped_process_" + std::to_string(proc);
-
 	mkdir(img_path.c_str(), 0700);
+	// create checkpoint through CRIU
+//	criu_init_opts();
+//
+//	criu_set_service_address(NULL);
+//
+//	criu_set_pid(proc);
 
-	int dir_disc = open(img_path.c_str(), O_DIRECTORY);
+//	criu_set_leave_running(true);
+//
+//
+//
+//	int dir_disc = open(img_path.c_str(), O_DIRECTORY);
+//
+//	criu_set_images_dir_fd(dir_disc);
+//
+//	criu_set_log_file("dump.log");
+//	criu_set_log_level(4);
+//
+//	criu_dump();
 
-	criu_set_images_dir_fd(dir_disc);
-
-	criu_set_log_file("dump.log");
-	criu_set_log_level(4);
-
-	criu_dump();
+	std::string cmd = "/usr/local/sbin/criu dump --shell-job -R -t " + std::to_string(proc) + " -D " + img_path;
+	system(cmd.c_str());
 
 	// Send files over network through FTP server.
 	sf::Ftp ftp;
 	ftp.connect(address, 21, sf::seconds(30));
 
-	sf::Ftp::Response resp = ftp.login(); // Anonymous login to FTP server
+	sf::Ftp::Response resp = ftp.login("solom", "pass"); // Anonymous login to FTP server
 
 	if (resp.isOk()) {
 
+		std::string remote_path = "/tmp/restore_proc_" + std::to_string(proc) + "/";
+		auto temp1 = ftp.createDirectory(remote_path.c_str());
+		temp1 = ftp.changeDirectory(remote_path.c_str());
 		std::filesystem::path dir(img_path);
 		for (auto &file: std::filesystem::directory_iterator(dir)) {
 			std::string local_dir = file.path().string();
-			std::string remote_dir = "/tmp/restore_proc_" + file.path().filename().string();
-			ftp.upload(local_dir, remote_dir, sf::Ftp::Binary);
+//			std::string remote_dir = remote_path + ;
+			auto temp = ftp.upload(local_dir.c_str(), "./", sf::Ftp::Binary);
 		}
 
 		ftp.disconnect();
@@ -210,18 +217,21 @@ int checkpoint(int proc, const std::string &address) {
 
 int restore(int proc) {
 	std::string img_path = "/tmp/restore_proc_" + std::to_string(proc);
+	std::string cmd ="/usr/local/sbin/criu restore --shell-job -D " + img_path;
 
-	criu_init_opts();
+	system(cmd.c_str());
 
-	criu_set_service_address(NULL);
+//	criu_init_opts();
+//
+//	criu_set_service_address(NULL);
 
 	int re_dir = open(img_path.c_str(), O_DIRECTORY);
-	criu_set_images_dir_fd(re_dir);
-
-	criu_set_log_file("restore.log");
-	criu_set_log_level(4);
-
-	criu_restore();
+//	criu_set_images_dir_fd(re_dir);
+//
+//	criu_set_log_file("restore.log");
+//	criu_set_log_level(4);
+//
+//	criu_restore();
 
 	// delete temporary files we will not use anymore
 	std::filesystem::remove_all(std::filesystem::path(img_path));

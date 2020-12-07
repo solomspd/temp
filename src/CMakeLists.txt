@@ -6,16 +6,15 @@ project(remote_fork_distributed_project)
 find_package(Threads REQUIRED)
 find_package(SFML COMPONENTS network REQUIRED)
 
-include_directories(/usr/local/lib64)
-link_directories(/usr/local/lib64)
+#include_directories(/usr/local/lib64)
+#link_directories(/usr/local/lib64)
 
 add_executable(client main.cpp)
 add_executable(server daemon.cpp)
 
 target_link_libraries(client Threads::Threads)
 target_link_libraries(server Threads::Threads)
-target_link_libraries(client criu)
-target_link_libraries(server criu)
+#target_link_libraries(server criu)
 target_link_libraries(server sfml-network)
 target_link_libraries(client sfml-network)
 

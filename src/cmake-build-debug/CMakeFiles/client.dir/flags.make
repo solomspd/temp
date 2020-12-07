@@ -4,7 +4,7 @@
 # compile CXX with /bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/lib64
+CXX_INCLUDES = 
 
 CXX_FLAGS = -g -std=gnu++17
 

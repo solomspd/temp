@@ -28,7 +28,7 @@ int myfork(const std::string& address)
 	client.disconnect();
 
 	sf::TcpListener listener;
-	stat = listener.listen(local_port);
+	stat = listener.listen(3100);
 	if (stat != sf::Socket::Done) {
 		std::cout << "Cannot listen to return pid" << std::endl;
 	}
