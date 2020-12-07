@@ -1,1 +1,1 @@
-/bin/g++ -g CMakeFiles/client.dir/main.cpp.o -o client   -L/usr/local/lib64  -Wl,-rpath,/usr/local/lib64 -lcriu /usr/lib/libsfml-network.so.2.5.1 -lpthread /usr/lib/libsfml-system.so.2.5.1 
+/bin/g++ -g CMakeFiles/client.dir/main.cpp.o -o client   -L/usr/local/lib64  -Wl,-rpath,/usr/local/lib64 /usr/lib/libsfml-network.so.2.5.1 -lpthread /usr/lib/libsfml-system.so.2.5.1 
