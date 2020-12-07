@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/lib.cpp" "/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/build_debug/CMakeFiles/client.dir/lib.cpp.o"
-  "/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/remote_proc.cpp" "/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/build_debug/CMakeFiles/client.dir/remote_proc.cpp.o"
+  "/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/main.cpp" "/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/build_debug/CMakeFiles/client.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/usr/local/lib64"
   )
 
 # Targets to which this target links.

@@ -1,22 +1,52 @@
 #include <iostream>
 #include <string>
+#include <SFML/Network.hpp>
 
-#include "remote_proc.hpp"
+#define local_port 3200
 
-int rfork(const std::string& address);
-
-int main(int argc, char* argv[])
-{ // Pre demo testing process. remove when project is complete
-    std::string addr = "192.168.1.20";
-    rfork(addr);
-    return 0;
-}
-
-int rfork(const std::string& address)
+int myfork(const std::string& address)
 {
     std::cout << "started remote fork client" << std::endl;
-    std::cout << "lets begin" << std::endl
-	      << "Process ID: " << getpid() << std::endl;
 
-    return 0; // TODO: Change to appropriate error or validation code
+	sf::TcpSocket client;
+	sf::Socket::Status stat = client.connect("localhost", local_port);
+	if (stat != sf::Socket::Done) {
+		std::cout << "cannot establish connection with local daemon" << "std::endl";
+		return -1;
+	}
+
+	// send current pid
+	std::string msg = std::to_string(getpid()) + " " + address;
+	// send message
+	stat = client.send(msg.c_str(), msg.size());
+	if (stat != sf::Socket::Done) {
+		std::cout << "Cannot send address to local daemon" << std::endl;
+		return -1;
+	}
+
+	// disconnect and reconnect to sync
+	client.disconnect();
+
+	sf::TcpListener listener;
+	stat = listener.listen(local_port);
+	if (stat != sf::Socket::Done) {
+		std::cout << "Cannot listen to return pid" << std::endl;
+	}
+
+	stat = listener.accept(client);
+	if (stat != sf::Socket::Done) {
+		std::cout << "Cannot accept pid" << std::endl;
+	}
+	char data[1000];
+	std::size_t rec;
+	stat = client.receive(data, 1000, rec);
+	if (stat != sf::Socket::Done) {
+		std::cout << "Cannot receive return pid" << std::endl;
+		return -1;
+	}
+
+	data[rec] = '\0';
+	int ret = atoi(data);
+
+    return ret;
 }

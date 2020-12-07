@@ -7,18 +7,26 @@
 #IncludeRegexTransform: 
 
 /data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/daemon.cpp
-boost/asio.hpp
+SFML/Network.hpp
+-
+criu/criu.h
+-
+filesystem
 -
 iostream
 -
+string
+-
+sys/stat.h
+-
+thread
+-
 vector
 -
-remote_proc.hpp
-/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/remote_proc.hpp
-
-/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/remote_proc.hpp
-boost/asio.hpp
+unistd.h
 -
-string
+sys/types.h
+-
+fcntl.h
 -
 

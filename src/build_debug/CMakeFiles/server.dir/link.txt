@@ -1,1 +1,1 @@
-/sbin/c++ CMakeFiles/server.dir/daemon.cpp.o CMakeFiles/server.dir/remote_proc.cpp.o -o server  -pthread 
+/sbin/c++ CMakeFiles/server.dir/daemon.cpp.o -o server   -L/usr/local/lib64  -Wl,-rpath,/usr/local/lib64 -lcriu /usr/lib/libsfml-network.so.2.5.1 -pthread /usr/lib/libsfml-system.so.2.5.1 

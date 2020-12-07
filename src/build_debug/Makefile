@@ -182,62 +182,32 @@ daemon.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/daemon.cpp.s
 .PHONY : daemon.cpp.s
 
-lib.o: lib.cpp.o
+main.o: main.cpp.o
 
-.PHONY : lib.o
-
-# target to build an object file
-lib.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/lib.cpp.o
-.PHONY : lib.cpp.o
-
-lib.i: lib.cpp.i
-
-.PHONY : lib.i
-
-# target to preprocess a source file
-lib.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/lib.cpp.i
-.PHONY : lib.cpp.i
-
-lib.s: lib.cpp.s
-
-.PHONY : lib.s
-
-# target to generate assembly for a file
-lib.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/lib.cpp.s
-.PHONY : lib.cpp.s
-
-remote_proc.o: remote_proc.cpp.o
-
-.PHONY : remote_proc.o
+.PHONY : main.o
 
 # target to build an object file
-remote_proc.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/remote_proc.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/remote_proc.cpp.o
-.PHONY : remote_proc.cpp.o
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-remote_proc.i: remote_proc.cpp.i
+main.i: main.cpp.i
 
-.PHONY : remote_proc.i
+.PHONY : main.i
 
 # target to preprocess a source file
-remote_proc.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/remote_proc.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/remote_proc.cpp.i
-.PHONY : remote_proc.cpp.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-remote_proc.s: remote_proc.cpp.s
+main.s: main.cpp.s
 
-.PHONY : remote_proc.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-remote_proc.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/remote_proc.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/remote_proc.cpp.s
-.PHONY : remote_proc.cpp.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -252,12 +222,9 @@ help:
 	@echo "... daemon.o"
 	@echo "... daemon.i"
 	@echo "... daemon.s"
-	@echo "... lib.o"
-	@echo "... lib.i"
-	@echo "... lib.s"
-	@echo "... remote_proc.o"
-	@echo "... remote_proc.i"
-	@echo "... remote_proc.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

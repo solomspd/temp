@@ -4,7 +4,7 @@
 # compile CXX with /sbin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/usr/local/lib64
 
-CXX_FLAGS = -pthread -std=gnu++2a
+CXX_FLAGS = -pthread -std=gnu++17
 

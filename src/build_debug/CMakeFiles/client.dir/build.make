@@ -76,45 +76,32 @@ include CMakeFiles/client.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/client.dir/flags.make
 
-CMakeFiles/client.dir/lib.cpp.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/lib.cpp.o: ../lib.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/build_debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/client.dir/lib.cpp.o"
-	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/lib.cpp.o -c "/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/lib.cpp"
+CMakeFiles/client.dir/main.cpp.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/build_debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/client.dir/main.cpp.o"
+	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/main.cpp.o -c "/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/main.cpp"
 
-CMakeFiles/client.dir/lib.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/lib.cpp.i"
-	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/lib.cpp" > CMakeFiles/client.dir/lib.cpp.i
+CMakeFiles/client.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/main.cpp.i"
+	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/main.cpp" > CMakeFiles/client.dir/main.cpp.i
 
-CMakeFiles/client.dir/lib.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/lib.cpp.s"
-	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/lib.cpp" -o CMakeFiles/client.dir/lib.cpp.s
-
-CMakeFiles/client.dir/remote_proc.cpp.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/remote_proc.cpp.o: ../remote_proc.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/build_debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/client.dir/remote_proc.cpp.o"
-	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/remote_proc.cpp.o -c "/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/remote_proc.cpp"
-
-CMakeFiles/client.dir/remote_proc.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/remote_proc.cpp.i"
-	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/remote_proc.cpp" > CMakeFiles/client.dir/remote_proc.cpp.i
-
-CMakeFiles/client.dir/remote_proc.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/remote_proc.cpp.s"
-	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/remote_proc.cpp" -o CMakeFiles/client.dir/remote_proc.cpp.s
+CMakeFiles/client.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/main.cpp.s"
+	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/main.cpp" -o CMakeFiles/client.dir/main.cpp.s
 
 # Object files for target client
 client_OBJECTS = \
-"CMakeFiles/client.dir/lib.cpp.o" \
-"CMakeFiles/client.dir/remote_proc.cpp.o"
+"CMakeFiles/client.dir/main.cpp.o"
 
 # External object files for target client
 client_EXTERNAL_OBJECTS =
 
-client: CMakeFiles/client.dir/lib.cpp.o
-client: CMakeFiles/client.dir/remote_proc.cpp.o
+client: CMakeFiles/client.dir/main.cpp.o
 client: CMakeFiles/client.dir/build.make
+client: /usr/lib/libsfml-network.so.2.5.1
+client: /usr/lib/libsfml-system.so.2.5.1
 client: CMakeFiles/client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/build_debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/data/Abdo/Abdo/Abdos University work/Fall 2020/distributed/project/src/build_debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable client"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
